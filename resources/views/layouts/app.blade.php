@@ -39,26 +39,33 @@
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
                     <a href="{{ route('welcome') }}" class="flex items-center">
-                        <img src="{{ asset('images/logo.png') }}" alt="BenchmarkPro Logo" class="h-12 w-13 mr-2">
+                        <img src="{{ asset('images/logo.png') }}" alt="BenchmarkPro Logo" class="h-12 w-auto mr-2">
                         <span class="text-3xl font-bold gradient-bg bg-clip-text text-transparent">
                             GAYI BENCHMARK TOOL
                         </span>
                     </a>
                 </div>
-                <nav class="hidden md:flex space-x-8">
-                    <a href="{{ route('welcome') }}" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Home</a>
-                    <a href="{{ route('benchmarks.select') }}" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Benchmarks</a>
-                </nav>
     
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button type="button" class="text-gray-600 hover:text-gray-900">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
+                <!-- Right Logo (hidden on mobile) -->
+                <div class="hidden sm:flex items-center">
+                    <a href="{{ route('welcome') }}" style="height: 100px; width: 100px;">
+                        <img src="{{ asset('images/footer.png') }}" alt="Right Logo" >
+                    </a>
                 </div>
             </div>
+            {{-- <nav class="hidden md:flex space-x-8">
+                <a href="{{ route('welcome') }}" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Home</a>
+                <a href="{{ route('benchmarks.select') }}" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Benchmarks</a>
+            </nav>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button type="button" class="text-gray-600 hover:text-gray-900">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div> --}}
         </div>
     </header>
     
