@@ -17,8 +17,8 @@
             <div class="inline-flex items-center justify-center w-32 h-32 bg-white rounded-full shadow-2xl mb-8">
                 <span class="text-6xl">📊</span>
             </div>
-            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
-                BenchmarkPro
+            <h1 class="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+                GAYI BENCHMARK TOOL
             </h1>
             <p class="text-xl md:text-2xl text-white opacity-90 mb-4">
                 Advanced Text Analysis & Benchmark Calculator
@@ -75,7 +75,7 @@
 </div>
 
 <!-- Features Section -->
-<div class="bg-white py-20">
+{{-- <div class="bg-white py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
             <h2 class="text-4xl font-bold text-gray-900 mb-6">Why Choose BenchmarkPro?</h2>
@@ -116,5 +116,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 @endsection

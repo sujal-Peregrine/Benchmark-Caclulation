@@ -27,3 +27,15 @@ Route::post('/benchmark/{formula}/compute', [BenchmarkController::class, 'comput
 
 // Results page
 Route::get('/results', [BenchmarkController::class, 'results'])->name('benchmark.results');
+
+// New: Form page for all benchmarks
+Route::get('/benchmarks/all', [BenchmarkController::class, 'showAllForm'])->name('benchmarks.all.form');
+
+// New: Process form and show results for all
+Route::post('/benchmarks/all/compute', [BenchmarkController::class, 'computeAll'])->name('benchmarks.all.compute');
+
+// New: Download PDF for single benchmark
+Route::get('/benchmark/{formula}/download', [BenchmarkController::class, 'downloadPdf'])->name('benchmark.download');
+
+// New: Download PDF for all benchmarks
+Route::get('/benchmarks/all/download', [BenchmarkController::class, 'downloadAllPdf'])->name('benchmarks.all.download');

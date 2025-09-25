@@ -149,6 +149,21 @@
             </div>
         </div>
 
+        <!-- New: Analyze All Section -->
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Or Analyze Everything at Once</h2>
+            <p class="text-xl text-gray-600 max-w-4xl mx-auto mb-8 leading-relaxed">
+                Run all benchmarks on your text in one go for a comprehensive overview.
+            </p>
+            <a href="{{ route('benchmarks.all.form') }}" 
+               class="inline-flex items-center px-12 py-5 btn-primary text-white font-bold rounded-2xl text-xl shadow-xl hover:shadow-2xl transition-all">
+                <span>Analyze All Benchmarks</span>
+                <svg class="w-6 h-6 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+            </a>
+        </div>
+
         <!-- Back to Home -->
         <div class="text-center">
             <a href="{{ route('welcome') }}" 

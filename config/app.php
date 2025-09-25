@@ -27,6 +27,8 @@ return [
     */
 
     'env' => env('APP_ENV', 'production'),
+    'Pdf' => Barryvdh\DomPDF\Facade\Pdf::class,
+
 
     /*
     |--------------------------------------------------------------------------

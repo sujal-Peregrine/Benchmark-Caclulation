@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Benchmark Calculator')</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon1.png') }}">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -36,15 +37,22 @@
     <header class="bg-white shadow-sm border-b">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <div class="flex items-center justify-between">
-                <div class="flex items-center">
-                    <a href="{{ route('welcome') }}" class="text-3xl font-bold gradient-bg bg-clip-text text-transparent">
-                        📊 BenchmarkPro
+                <!-- Logo + Heading -->
+                <div class="flex items-center flex-wrap">
+                    <a href="{{ route('welcome') }}" class="flex items-center">
+                        <img src="{{ asset('images/logo.png') }}" alt="BenchmarkPro Logo" class="h-10 w-auto sm:h-12 mr-2">
+                        <span class="text-lg sm:text-3xl md:text-3xl font-bold gradient-bg bg-clip-text text-transparent leading-tight">
+                            GAYI BENCHMARK TOOL
+                        </span>
                     </a>
                 </div>
+    
+                <!-- Desktop Nav -->
                 <nav class="hidden md:flex space-x-8">
                     <a href="{{ route('welcome') }}" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Home</a>
                     <a href="{{ route('benchmarks.select') }}" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Benchmarks</a>
                 </nav>
+    
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
                     <button type="button" class="text-gray-600 hover:text-gray-900">
@@ -56,6 +64,7 @@
             </div>
         </div>
     </header>
+    
 
     <!-- Main Content -->
     <main>
@@ -63,12 +72,35 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t mt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div class="text-center text-gray-600">
-                <p>&copy; {{ date('Y') }} BenchmarkPro. All rights reserved.</p>
-                <p class="mt-2 text-sm">Advanced Text Analysis & Benchmark Calculator</p>
+    {{-- mt-16 --}}
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 relative">
+            
+            <!-- Mobile Logo - Centered -->
+            <div class="flex justify-center md:hidden">
+                <img src="{{ asset('images/footer1.png') }}" 
+                     alt="Gayi Benchmark Tool Logo" 
+                     class="h-24 w-auto mix-blend-darken">
             </div>
+            
+            <!-- Desktop Logo - Centered at Top -->
+            <div class="hidden md:flex justify-center">
+                <img src="{{ asset('images/footer1.png') }}" 
+                     alt="Gayi Benchmark Tool Logo" 
+                     class="h-20 lg:h-28 w-auto mix-blend-darken">
+            </div>
+            
+            <!-- Footer Content - Always Centered -->
+            <div class="text-center">
+                <p class="text-gray-600 font-medium text-lg">
+                    &copy; {{ date('Y') }} Gayi Benchmark Tool
+                </p>
+                <p class="text-gray-500 text-base mt-2">
+                    Columbia University. All Rights Reserved.
+                </p>
+            </div>
+            
         </div>
     </footer>
 
