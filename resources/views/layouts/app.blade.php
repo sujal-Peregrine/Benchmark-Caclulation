@@ -37,17 +37,14 @@
     <header class="bg-white shadow-sm border-b">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <div class="flex items-center justify-between">
-                <!-- Logo + Heading -->
-                <div class="flex items-center flex-wrap">
+                <div class="flex items-center">
                     <a href="{{ route('welcome') }}" class="flex items-center">
-                        <img src="{{ asset('images/logo.png') }}" alt="BenchmarkPro Logo" class="h-10 w-auto sm:h-12 mr-2">
-                        <span class="text-lg sm:text-3xl md:text-3xl font-bold gradient-bg bg-clip-text text-transparent leading-tight">
+                        <img src="{{ asset('images/logo.png') }}" alt="BenchmarkPro Logo" class="h-12 w-13 mr-2">
+                        <span class="text-3xl font-bold gradient-bg bg-clip-text text-transparent">
                             GAYI BENCHMARK TOOL
                         </span>
                     </a>
                 </div>
-    
-                <!-- Desktop Nav -->
                 <nav class="hidden md:flex space-x-8">
                     <a href="{{ route('welcome') }}" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Home</a>
                     <a href="{{ route('benchmarks.select') }}" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Benchmarks</a>
@@ -73,34 +70,12 @@
 
     <!-- Footer -->
     {{-- mt-16 --}}
-    <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 relative">
-            
-            <!-- Mobile Logo - Centered -->
-            <div class="flex justify-center md:hidden">
-                <img src="{{ asset('images/footer1.png') }}" 
-                     alt="Gayi Benchmark Tool Logo" 
-                     class="h-24 w-auto mix-blend-darken">
+    <footer class="bg-white border-t"> 
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center text-gray-600">
+                <p>&copy; {{ date('Y') }} Gayi Benchmark Tool.</p>
+                <p class="mt-2 text-sm">Columbia University.All Rights Reserved.</p>
             </div>
-            
-            <!-- Desktop Logo - Centered at Top -->
-            <div class="hidden md:flex justify-center">
-                <img src="{{ asset('images/footer1.png') }}" 
-                     alt="Gayi Benchmark Tool Logo" 
-                     class="h-20 lg:h-28 w-auto mix-blend-darken">
-            </div>
-            
-            <!-- Footer Content - Always Centered -->
-            <div class="text-center">
-                <p class="text-gray-600 font-medium text-lg">
-                    &copy; {{ date('Y') }} Gayi Benchmark Tool
-                </p>
-                <p class="text-gray-500 text-base mt-2">
-                    Columbia University. All Rights Reserved.
-                </p>
-            </div>
-            
         </div>
     </footer>
 

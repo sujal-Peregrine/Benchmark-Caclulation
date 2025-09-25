@@ -15,11 +15,16 @@
         <!-- Logo Section -->
         <div class="mb-12">
             <div class="inline-flex items-center justify-center w-32 h-32 bg-white rounded-full shadow-2xl mb-8">
-                <span class="text-6xl">📊</span>
+                <img src="{{ asset('images/logo.png') }}" alt="Logo" class="h-20 w-auto object-contain">
             </div>
-            <h1 class="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-                GAYI BENCHMARK TOOL
+                     
+            <h1 class="text-2xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-yellow-400 via-green-400 via-blue-500 to-purple-600">
+                    gAyi
+                </span> 
+                <span class="text-white">BENCHMARK TOOL</span>
             </h1>
+            
             <p class="text-xl md:text-2xl text-white opacity-90 mb-4">
                 Advanced Text Analysis & Benchmark Calculator
             </p>
