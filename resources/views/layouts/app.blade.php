@@ -41,7 +41,7 @@
                     <a href="{{ route('welcome') }}" class="flex items-center">
                         <img src="{{ asset('images/logo.png') }}" alt="BenchmarkPro Logo" class="h-12 w-auto mr-2">
                         <span class="text-3xl font-bold gradient-bg bg-clip-text text-transparent">
-                            GAYI BENCHMARK TOOL
+                            GAYL BENCHMARK TOOL
                         </span>
                     </a>
                 </div>
@@ -80,7 +80,7 @@
     <footer class="bg-white border-t"> 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div class="text-center text-gray-600">
-                <p>&copy; {{ date('Y') }} Gayi Benchmark Tool.</p>
+                <p>&copy; {{ date('Y') }} gAyl Benchmark Tool.</p>
                 <p class="mt-2 text-sm">Columbia University.All Rights Reserved.</p>
             </div>
         </div>

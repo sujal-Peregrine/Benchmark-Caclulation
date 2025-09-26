@@ -20,17 +20,17 @@
                      
             <h1 class="text-2xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
                 <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-yellow-400 via-green-400 via-blue-500 to-purple-600">
-                    gAyi
+                    gAyl
                 </span> 
                 <span class="text-white">BENCHMARK TOOL</span>
             </h1>
             
-            <p class="text-xl md:text-2xl text-white opacity-90 mb-4">
+            {{-- <p class="text-xl md:text-2xl text-white opacity-90 mb-4">
                 Advanced Text Analysis & Benchmark Calculator
             </p>
             <p class="text-lg text-white opacity-80 max-w-3xl mx-auto leading-relaxed">
                 Evaluate ethical alignment, inclusivity, complexity, and sentiment in your text using cutting-edge NLP algorithms
-            </p>
+            </p> --}}
         </div>
 
         <!-- Features Grid -->

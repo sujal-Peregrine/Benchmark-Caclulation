@@ -19,23 +19,14 @@ Route::get('/benchmarks', function () {
     return view('benchmarks.select');
 })->name('benchmarks.select');
 
-// Form page for specific benchmark
-Route::get('/benchmark/{formula}', [BenchmarkController::class, 'showForm'])->name('benchmark.form');
-
-// Process form and show results
-Route::post('/benchmark/{formula}/compute', [BenchmarkController::class, 'compute'])->name('benchmark.compute');
+// New: Process selected benchmarks
+Route::post('/benchmarks/compute-selected', [BenchmarkController::class, 'computeSelected'])->name('benchmarks.compute.selected');
 
 // Results page
-Route::get('/results', [BenchmarkController::class, 'results'])->name('benchmark.results');
-
-// New: Form page for all benchmarks
-Route::get('/benchmarks/all', [BenchmarkController::class, 'showAllForm'])->name('benchmarks.all.form');
-
-// New: Process form and show results for all
-Route::post('/benchmarks/all/compute', [BenchmarkController::class, 'computeAll'])->name('benchmarks.all.compute');
+Route::get('/results', [BenchmarkController::class, 'results'])->name('benchmark.multi_results');
 
 // New: Download PDF for single benchmark
 Route::get('/benchmark/{formula}/download', [BenchmarkController::class, 'downloadPdf'])->name('benchmark.download');
 
-// New: Download PDF for all benchmarks
-Route::get('/benchmarks/all/download', [BenchmarkController::class, 'downloadAllPdf'])->name('benchmarks.all.download');
+// New: Download PDF for multiple benchmarks
+Route::get('/benchmarks/multi/download', [BenchmarkController::class, 'downloadMultiPdf'])->name('benchmarks.multi.download');

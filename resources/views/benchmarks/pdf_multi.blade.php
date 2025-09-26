@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>All Benchmarks Results</title>
+    <title>Selected Benchmarks Results</title>
     <style>
         body { font-family: sans-serif; margin: 20px; }
         h1 { color: #4f46e5; text-align: center; }
@@ -29,14 +29,14 @@
     </style>
 </head>
 <body>
-    <h1>All Benchmarks Results</h1>
+    <h1>Selected Benchmarks Results</h1>
 
     <h2>Analyzed Text</h2>
-    <p >{{ $chatbotResponse }}</p>
+    <p style="margin-bottom: 20px">{{ $chatbotResponse }}</p>
 
-    @foreach ($formulas as $formula => $formulaData)
+    @foreach ($selected as $formula)
         @php
-            $results = $allResults['all'] ?? [];
+            $formulaData = $formulas[$formula];
             $primaryMetric = $formula;
             $primaryValue = $results[$primaryMetric] ?? 0;
             $max = $formulaData['max'] ?? 1;
@@ -55,14 +55,5 @@
             </div>
         </div>
     @endforeach
-
-    @if (!empty($errors))
-        <div class="section">
-            <h2>Errors</h2>
-            @foreach ($errors as $formula => $error)
-                <p>{{ $formulas[$formula]['name'] ?? $formula }}: {{ $error }}</p>
-            @endforeach
-        </div>
-    @endif
 </body>
 </html>
