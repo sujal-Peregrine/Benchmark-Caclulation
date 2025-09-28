@@ -35,25 +35,46 @@
 <body class="bg-gray-50 min-h-screen">
     <!-- Header -->
     <header class="bg-white shadow-sm border-b">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center">
-                    <a href="{{ route('welcome') }}" class="flex items-center">
-                        <img src="{{ asset('images/logo.png') }}" alt="BenchmarkPro Logo" class="h-12 w-auto mr-2">
-                        <span class="text-3xl font-bold gradient-bg bg-clip-text text-transparent">
-                            GAYL BENCHMARK TOOL
-                        </span>
-                    </a>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 md:py-2">
+            <!-- Flex column on mobile, row on md+ with better spacing -->
+            <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 md:space-x-8">
+    
+                <!-- Left side: Logos and Title -->
+                <div class="flex items-center space-x-4 md:space-x-6">
+                    <!-- Footer Logo (always visible) -->
+                    <div class="flex items-center flex-shrink-0">
+                        <a href="{{ route('welcome') }}" class="block" style="height: 80px; width: 80px; sm:height: 90px; sm:width: 90px;">
+                            <img src="{{ asset('images/footer.png') }}" alt="Right Logo" class="h-full w-full object-contain">
+                        </a>
+                    </div>
+    
+                    <!-- Main Logo + Title -->
+                    <div class="flex items-center">
+                        <a href="{{ route('welcome') }}" class="flex items-center">
+                            <img src="{{ asset('images/logo.png') }}" alt="BenchmarkPro Logo" class="h-8 sm:h-10 md:h-12 w-auto mr-2 sm:mr-3">
+                            <span class="text-base sm:text-lg md:text-2xl lg:text-3xl font-bold gradient-bg bg-clip-text text-transparent text-center md:text-left">
+                                GAYL BENCHMARK TOOL
+                            </span>
+                        </a>
+                    </div>
                 </div>
     
-                <!-- Right Logo (hidden on mobile) -->
-                <div class="hidden sm:flex items-center">
-                    <a href="{{ route('welcome') }}" style="height: 100px; width: 100px;">
-                        <img src="{{ asset('images/footer.png') }}" alt="Right Logo" >
+                <!-- Right side: Contact info -->
+                <div class="text-center md:text-right text-sm sm:text-base flex-shrink-0">
+                    <div class="text-gray-600">
+                        For inquiries, contact:
+                    </div>
+                    <a href="mailto:sn3136@columbia.edu" class="text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200 font-medium">
+                        sn3136@columbia.edu
                     </a>
                 </div>
             </div>
-            {{-- <nav class="hidden md:flex space-x-8">
+        </div>
+    </header>
+    
+    
+    
+     {{-- <nav class="hidden md:flex space-x-8">
                 <a href="{{ route('welcome') }}" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Home</a>
                 <a href="{{ route('benchmarks.select') }}" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Benchmarks</a>
             </nav>
@@ -66,8 +87,6 @@
                     </svg>
                 </button>
             </div> --}}
-        </div>
-    </header>
     
 
     <!-- Main Content -->
