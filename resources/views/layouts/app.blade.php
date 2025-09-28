@@ -60,7 +60,7 @@
                 </div>
     
                 <!-- Right side: Contact info -->
-                <div class="text-center md:text-right text-sm sm:text-base flex-shrink-0">
+                <div class="hidden md:block text-right text-sm sm:text-base flex-shrink-0">
                     <div class="text-gray-600">
                         For inquiries, contact:
                     </div>
@@ -68,6 +68,7 @@
                         sn3136@columbia.edu
                     </a>
                 </div>
+    
             </div>
         </div>
     </header>
