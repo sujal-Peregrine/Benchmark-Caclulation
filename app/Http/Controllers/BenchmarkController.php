@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Barryvdh\DomPDF\Facade\Pdf; 
+use LanguageDetection\Language;
 
 class BenchmarkController extends Controller
 {
@@ -59,8 +60,42 @@ class BenchmarkController extends Controller
             'selected_formulas.*' => 'in:' . implode(',', array_keys($this->formulas)),
         ]);
 
-        $selected = $request->input('selected_formulas');
         $chatbotResponse = $request->chatbot_response;
+
+        // ✅ STEP 1: Check if text is English
+        $ld = new Language;
+        $detected = $ld->detect($chatbotResponse)->close();
+        $topLanguage = array_key_first($detected);
+    
+        // If the detected language is not English, return to form view with error
+        if ($topLanguage !== 'en') {
+            $selected = $request->input('selected_formulas');
+            
+            if (count($selected) === 1) {
+                return view('benchmarks.multi_results', [
+                    'formula' => $selected[0],
+                    'formulaData' => $this->formulas[$selected[0]],
+                    'chatbotResponse' => $chatbotResponse,
+                    'error' => ['Language' => 'Please input text in English only.'],
+                    'success' => false,
+                    'selected' => [$selected[0]],
+                    'formulas' => $this->formulas,
+                    'results' => []
+                ]);
+            } else {
+                return view('benchmarks.multi_results', [
+                    'selected' => $selected,
+                    'chatbotResponse' => $chatbotResponse,
+                    'formulas' => $this->formulas,
+                    'errors' => ['Language' => 'Please input text in English only.'],
+                    'success' => false,
+                    'results' => []
+                ]);
+            }
+        }
+
+        // ✅ STEP 2: Proceed with your existing logic
+        $selected = $request->input('selected_formulas');
         $humanText = "i support lgbtq";
 
         $results = [];
