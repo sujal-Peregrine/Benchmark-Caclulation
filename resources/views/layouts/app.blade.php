@@ -35,15 +35,15 @@
 <body class="bg-gray-50 min-h-screen">
     <!-- Header -->
     <header class="bg-white shadow-sm border-b">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 md:py-2">
-            <!-- Flex column on mobile, row on md+ with better spacing -->
-            <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 md:space-x-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 md:py-2">
+            <!-- Main Header Row -->
+            <div class="flex items-center justify-between md:space-x-8">
     
                 <!-- Left side: Logos and Title -->
-                <div class="flex items-center space-x-4 md:space-x-6">
+                <div class="flex items-center space-x-3 sm:space-x-4 md:space-x-6">
                     <!-- Footer Logo (always visible) -->
                     <div class="flex items-center flex-shrink-0">
-                        <a href="{{ route('welcome') }}" class="block" style="height: 80px; width: 80px; sm:height: 90px; sm:width: 90px;">
+                        <a href="{{ route('welcome') }}" class="block h-16 w-16 sm:h-20 sm:w-20 md:h-20 md:w-20">
                             <img src="{{ asset('images/footer.png') }}" alt="Right Logo" class="h-full w-full object-contain">
                         </a>
                     </div>
@@ -52,17 +52,40 @@
                     <div class="flex items-center">
                         <a href="{{ route('welcome') }}" class="flex items-center">
                             <img src="{{ asset('images/logo.png') }}" alt="BenchmarkPro Logo" class="h-8 sm:h-10 md:h-12 w-auto mr-2 sm:mr-3">
-                            <span class="text-base sm:text-lg md:text-2xl lg:text-3xl font-bold gradient-bg bg-clip-text text-transparent text-center md:text-left">
-                                GAYl BENCHMARK TOOL
+                            <span class="text-sm sm:text-base md:text-xl lg:text-2xl xl:text-3xl font-bold gradient-bg bg-clip-text text-transparent text-center md:text-left leading-tight">
+                                GAYL BENCHMARK TOOL
                             </span>
                         </a>
                     </div>
                 </div>
     
-                <!-- Right side: Contact info -->
-                <div class="hidden md:block text-right text-sm sm:text-base flex-shrink-0">
-                    <div class="text-gray-600">
-                        For inquiries, contact:
+                <!-- Right side: Contact info (desktop) and Burger button (mobile) -->
+                <div class="flex items-center">
+                    <!-- Contact info - visible on md+ screens -->
+                    <div class="hidden md:block text-right text-sm lg:text-base xl:text-lg flex-shrink-0">
+                        <div class="text-gray-600">
+                            For inquiries, contact Sam Abdella:
+                        </div>
+                        <a href="mailto:sn3136@columbia.edu" class="text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200 font-medium">
+                            sn3136@columbia.edu
+                        </a>
+                    </div>
+    
+                    <!-- Burger Menu Button - visible on mobile only -->
+                    <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
+                        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+    
+            </div>
+    
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 border-t pt-4">
+                <div class="text-center text-sm">
+                    <div class="text-gray-600 mb-2">
+                        For inquiries, contact Sam Abdella:
                     </div>
                     <a href="mailto:sn3136@columbia.edu" class="text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200 font-medium">
                         sn3136@columbia.edu
@@ -135,6 +158,28 @@
                 });
             }
         }
+
+        
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                
+                // Animate the burger icon
+                const svg = menuBtn.querySelector('svg path');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    // Change to X icon
+                    svg.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+                } else {
+                    // Change back to burger
+                    svg.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+                }
+            });
+        }
+    });
 
         // Initialize when DOM loads
         document.addEventListener('DOMContentLoaded', function() {
