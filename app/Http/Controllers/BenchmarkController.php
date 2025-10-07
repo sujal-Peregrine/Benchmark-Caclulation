@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
-use Barryvdh\DomPDF\Facade\Pdf; 
+use Barryvdh\DomPDF\Facade\Pdf;
+use DetectLanguage\DetectLanguage;
 
 class BenchmarkController extends Controller
 {
@@ -62,6 +63,36 @@ class BenchmarkController extends Controller
         $selected = $request->input('selected_formulas');
         $chatbotResponse = $request->chatbot_response;
         $humanText = "i support lgbtq";
+        DetectLanguage::setApiKey(config('services.detectlanguage.key'));
+        try {
+            $detections = DetectLanguage::detect($chatbotResponse);
+            $isEnglish = false;
+            $confidence = 0;
+
+            if (!empty($detections)) {
+                foreach ($detections as $detection) {
+                    if ($detection->language === 'en') {
+                        $isEnglish = true;
+                        $confidence = $detection->confidence;
+                        break;
+                    }
+                }
+            }
+
+            if (!$isEnglish || $confidence < 0.5) {
+                return view('benchmarks.multi_results', [
+                    'selected' => $selected,
+                    'chatbotResponse' => $chatbotResponse,
+                    'formulas' => $this->formulas,
+                    'errors' => ['Language' => 'Please input text in English only.'],
+                    'success' => false,
+                    'results' => []
+                ]);
+            }
+        } catch (\Exception $e) {
+            Log::error('Language detection failed', ['error' => $e->getMessage()]);
+            // fallback: allow processing
+        }
 
         $results = [];
         $errors = [];

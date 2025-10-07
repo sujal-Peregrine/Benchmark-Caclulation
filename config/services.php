@@ -35,4 +35,7 @@ return [
         ],
     ],
 
+    'detectlanguage' => [
+    'key' => env('DETECT_LANGUAGE_API_KEY'),
+],
 ];
