@@ -85,7 +85,7 @@
             <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 border-t pt-4">
                 <div class="text-center text-sm">
                     <div class="text-gray-600 mb-2">
-                        For inquiries, contact Sam Abdella:
+                        For inquiries, please contact Sam Abdella:
                     </div>
                     <a href="mailto:sn3136@columbia.edu" class="text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200 font-medium">
                         sn3136@columbia.edu
