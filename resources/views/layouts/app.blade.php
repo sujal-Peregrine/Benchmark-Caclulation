@@ -53,7 +53,7 @@
                         <a href="{{ route('welcome') }}" class="flex items-center">
                             <img src="{{ asset('images/logo.png') }}" alt="BenchmarkPro Logo" class="h-8 sm:h-10 md:h-12 w-auto mr-2 sm:mr-3">
                             <span class="text-sm sm:text-base md:text-xl lg:text-2xl xl:text-3xl font-bold gradient-bg bg-clip-text text-transparent text-center md:text-left leading-tight">
-                                GAYL BENCHMARK TOOL
+                                GAYl BENCHMARK TOOL
                             </span>
                         </a>
                     </div>
