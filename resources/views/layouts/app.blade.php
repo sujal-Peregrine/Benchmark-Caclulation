@@ -64,7 +64,7 @@
                     <!-- Contact info - visible on md+ screens -->
                     <div class="hidden md:block text-right text-sm lg:text-base xl:text-lg flex-shrink-0">
                         <div class="text-gray-600">
-                            For inquiries, contact Sam Abdella:
+                            For inquiries, please contact Sam Abdella:
                         </div>
                         <a href="mailto:sn3136@columbia.edu" class="text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200 font-medium">
                             sn3136@columbia.edu
